@@ -6,7 +6,8 @@ interface FiltersProps {
 
 export default function Filters({ search, setSearch, continents }: FiltersProps) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-white p-4 shadow-md rounded-lg">
+    // <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-white p-4 shadow-md rounded-lg"></div> dsektop view
+    <div className="flex flex-col gap-4 bg-white p-4 shadow-md rounded-lg max-w-md mx-auto">
       
       {/* Dropdown untuk filter berdasarkan benua */}
       <div>

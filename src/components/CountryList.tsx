@@ -51,7 +51,35 @@ export default function CountryList({initialCountries, continents,}: {initialCou
       <Filters search={search} setSearch={setSearch} continents={continents} />
 
       {/* Nampilin daftar negara yang dah difilter */}
-      <div className="max-w-8xl mx-auto p-4">
+
+      <div className="w-full max-w-md mx-auto p-4">
+        <div className="bg-white shadow-lg rounded-lg p-4">
+          <h1 className="text-xl font-bold mb-4">Daftar Negara</h1>
+
+          {/* Scrollable List */}
+          <div className="h-96 overflow-y-auto border rounded-lg p-4">
+            <div className="flex flex-col gap-4">
+              {filteredCountries.map((country) => (
+                <div key={country.code} className="border p-4 rounded-lg shadow-md bg-gray-50">
+                  <h2 className="text-lg font-semibold">{country.name} ({country.code})</h2>
+                  <p><strong>Continent:</strong> {country.continent.name}</p>
+                  <p><strong>Currency:</strong> {country.currency}</p>
+                  <p><strong>Phone:</strong> +{country.phone}</p>
+                  <button 
+                    className="mt-2 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+                    onClick={() => addToWishlist(country)}
+                  >
+                    Tambah ke Wishlist
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop View */}
+      {/* <div className="max-w-8xl mx-auto p-4">
         <div className="bg-white shadow-lg rounded-lg p-4">
           <h1 className="text-xl font-bold mb-4">Daftar Negara</h1>
           <div className="h-96 overflow-y-auto border rounded-lg p-4">
@@ -73,7 +101,7 @@ export default function CountryList({initialCountries, continents,}: {initialCou
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Wishlist Component */}
       <Wishlist wishlist={wishlist} removeFromWishlist={removeFromWishlist} />
