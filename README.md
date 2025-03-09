@@ -9,7 +9,9 @@ git clone https://github.com/Yorokoube/next-app.git
 
 npm install
 
-npm run dev
+npm run build
+
+npx serve@latest out
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
